@@ -21,7 +21,7 @@ class RegisterForm(FlaskForm):
     username = StringField('Логин', validators=[DataRequired()])
     email = StringField('Электронная почта', validators=[DataRequired(), Email()])
     password = PasswordField('Пароль', validators=[DataRequired()])
-    confirm = PasswordField('Повторите пароль', validators=[DataRequired(), EqualTo('Пароль')])
+    confirm = PasswordField('Повторите пароль', validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField('Зарегистрироваться')
 
     def validate_username(self, username):
@@ -47,5 +47,5 @@ class SendResetPasswordRequestForm(FlaskForm):
 
 class ResetPasswordForm(FlaskForm):
     password = PasswordField('Пароль', validators=[DataRequired()])
-    confirm = PasswordField('Повторите пароль', validators=[DataRequired(), EqualTo('Пароль')])
+    confirm = PasswordField('Повторите пароль', validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField('Сбросить пароль')

@@ -19,7 +19,7 @@ def index():
 @login_required
 def log():
     comments = [{'id': 1, 'name': 'dani', 'city': 'kras'}, {'id': 2, 'name': 'sanc', 'city': 'rostov'}]
-    return render_template('main/log.html')
+    return render_template('main/log.html', comments=comments)
 
 
 @main.route('/admin')
