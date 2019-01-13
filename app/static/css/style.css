@@ -1,0 +1,9 @@
+.alert-message {
+    color: rgba(185, 13, 18, 0.64);
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+}
+
+body {
+    /*background-color: red;*/
+}

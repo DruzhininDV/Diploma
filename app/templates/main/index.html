@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block app_content %}
+    <h1>Добрый день {{ current_user.username }}!</h1>
+
+    {% block title %}Просмотр{% endblock %}
+    <h1>Расчеты</h1>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Номер</th>
+            <th scope="col">Название</th>
+            <th scope="col">Приоритет</th>
+            <td></td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for comment in comments %}
+            <tr>
+                <td>{{ comment["id"] }}</td>
+                <td>{{ comment["name"] }}</td>
+                <td>{{ comment["prior"] }}</td>
+                <td class="text-right">
+                    <div class="row">
+                        <form action="{{ url_for('main.delete') }}" method="post" class="pull-right">
+                            <input type="hidden" name="id" value="{{ comment["id"] }}">
+                            <input type="submit" class="btn btn-danger" data-toggle="confirmation"
+                                   data-title="Действительно остановить?" value="Остановить">
+                        </form>
+                        <a class="btn btn-primary pull-right"
+                           href="">Запустить</a>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        {% endfor %}
+    </table>
+
+{% endblock %}
+
+
