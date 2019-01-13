@@ -1,6 +1,8 @@
 from flask import Blueprint, render_template, redirect, url_for
 from flask_login import login_required
 
+from app.model import Log
+
 main = Blueprint('main', __name__)
 
 
@@ -18,8 +20,8 @@ def index():
 @main.route('/log')
 @login_required
 def log():
-    comments = [{'id': 1, 'name': 'dani', 'city': 'kras'}, {'id': 2, 'name': 'sanc', 'city': 'rostov'}]
-    return render_template('main/log.html', comments=comments)
+    logs = Log.query.all()
+    return render_template('main/log.html', logs=logs)
 
 
 @main.route('/admin')

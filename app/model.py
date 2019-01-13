@@ -34,3 +34,10 @@ class User(db.Model, UserMixin):
         except:
             return
         return User.query.get(id)
+
+class Log(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(80), unique=False, nullable=False)
+    start_date = db.Column(db.DateTime, unique=False, nullable=False)
+    finish_date = db.Column(db.DateTime, unique=False, nullable=False)
+    status = db.Column(db.String(80), unique=False, nullable=False)
