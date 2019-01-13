@@ -9,7 +9,7 @@ main = Blueprint('main', __name__)
 @login_required
 def index():
     comments = [{'id': 1, 'name': 'Расчет для систем хранения', 'prior': 3},
-                {'id': 2, 'name': 'Цены продажи', 'prior': '2'}
+                {'id': 2, 'name': 'Цены продажи', 'prior': '2'},
                 {'id': 3, 'name': 'Расчет входных цен', 'prior': '5'}
                 ]
     return render_template('main/index.html', comments=comments)
