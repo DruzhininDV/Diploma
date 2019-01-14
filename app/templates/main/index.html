@@ -9,20 +9,18 @@
         <tr>
             <th scope="col">Номер</th>
             <th scope="col">Название</th>
-            <th scope="col">Действие</th>
             <td></td>
         </tr>
         </thead>
         <tbody>
-        {% for comment in comments %}
+        {% for calc in calcs %}
             <tr>
-                <td>{{ comment["id"] }}</td>
-                <td>{{ comment["name"] }}</td>
-                <td>{{ comment["prior"] }}</td>
+                <td>{{ calc["id_calc"] }}</td>
+                <td>{{ calc["name"] }}</td>
                 <td class="text-right">
                     <div class="row">
                         <form action="{{ url_for('main.delete') }}" method="post" class="pull-right">
-                            <input type="hidden" name="id" value="{{ comment["id"] }}">
+                            <input type="hidden" name="id" value="{{ calc["id"] }}">
                             <input type="submit" class="btn btn-danger" data-toggle="confirmation"
                                    data-title="Действительно остановить?" value="Остановить">
                         </form>
