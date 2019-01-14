@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS calc;
-CREATE TABLE IF NOT EXISTS calc
-(id_calc INTEGER PRIMARY KEY not null, name varchar(255) not null);
+-- DROP TABLE IF EXISTS calc;
+-- CREATE TABLE IF NOT EXISTS calc
+-- (id_calc INTEGER PRIMARY KEY not null, name varchar(255) not null);
 
 
 DROP TABLE IF EXISTS calc_log;
