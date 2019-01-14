@@ -1,7 +1,22 @@
 {% extends 'base.html' %}
 {% block app_content %}
     <h1>Вы на странице администратора</h1>
+    <a class="navbar-brand" href="{{ url_for('main.log') }}">Ограничить список МХ для теста</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
+    <a class="navbar-brand" href="{{ url_for('main.log') }}">Ограничить Параллели для теста</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <a class="navbar-brand" href="{{ url_for('main.log') }}">Даигностика и трассировка</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <button type="button" class="btn btn-primary" href="{{ url_for('main.index') }}>Ограничить Параллели для теста</button>
 {% endblock %}
 
 
