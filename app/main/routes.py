@@ -46,4 +46,4 @@ def admin():
 @login_required
 def delete():
     print("delete")
-    return render_template('main/admin.html')
+    return render_template('main/delete.html')
