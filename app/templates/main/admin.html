@@ -4,32 +4,60 @@
 {% block app_content %}
 
 
-
-    <a class="pure-button pure-button-primary" href="#">Ограничить МХ для расчетов</a>
+    <form name="select_all" method="post" style="margin-left:35px;">
+        <b>Рассчитываемые МХ:</b><br>
+        <input type="checkbox" name="list" value="1">Краснодар 1<br>
+        <input type="checkbox" name="list" value="2">Краснодар 2<br>
+        <input type="checkbox" name="list" value="3">Краснодар 3<br>
+        <input type="checkbox" name="list" value="4">Краснодар 3<br>
+        <input type="checkbox" name="list" value="5">Краснодар 4<br>
+        <input type="checkbox" name="list" value="6">Краснодар 5<br><br>
+        <input type="button" value="Выделить все" onclick="check(this.form.list,1)">
+        <input type="button" value="Снять выделение" onclick="check(this.form.list,0)">
+    </form>
     <br>
-    <br>
-    <a class="pure-button pure-button-primary" href="#">Ограничить параллели для расчетов</a>
-    <br>
-    <br>
-    <a class="pure-button pure-button-primary" href="#">Диагностика и трассировка</a>
-    <br>
-    <br>
-
-    <div class="range">
-        <label for="formControlRange">Ограничить параллели для расчетов</label>
-        <input type="range" class="form-control-range" id="formControlRange">
-    </div>
 
 
     <div class="slidecontainer">
+        <b>Ограничние параллелей расчетов </b><br>
+        <br>
         <input type="range" min="0" max="64" value="32" step="8" class="slider" id="myRange">
         <span id="demo" style="font-weight:bold;color:red"></span>
     </div>
+
+    <br>
+
+    <br>
+    <b>Диагностика и трассировка </b><br>
+    <br>
+    <div class="bootstrap-switch-square">
+        <input type="checkbox" data-toggle="switch" name="Resend" id="Resend"/> ВКЛ/ВЫКЛ
+    </div>
+    <br>
+    <br>
+
+    {#    <div class="range">#}
+    {#        <label for="formControlRange">Ограничить параллели для расчетов</label>#}
+    {#        <input type="range" class="form-control-range" id="formControlRange">#}
+    {#    </div>#}
+
+
+
 {% endblock %}
 
-<script>
-
-
+<script type="text/javascript">
+    function check(field, flag) {
+        if (flag == "1") {
+            for (i = 0; i < field.length; i++) {
+                field[i].checked = true;
+            }
+        }
+        else {
+            for (i = 0; i < field.length; i++) {
+                field[i].checked = false;
+            }
+        }
+    }
 </script>
 
 
