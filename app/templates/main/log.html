@@ -32,6 +32,8 @@
                         <form action="{{ url_for('main.delete_log') }}" method="post" class="pull-right">
                             <input type="hidden" name="id" value="{{ log["id"] }}">
                             <input type="submit" class="btn btn-danger" data-toggle="confirmation"
+                                   data-btn-ok-label="Да" data-btn-ok-class="btn-success"
+                                   data-btn-cancel-label="Нет" data-btn-cancel-class="btn-danger"
                                    data-title="Действительно остановить?" value="Остановить">
                         </form>
 {#                        <a class="btn btn-primary pull-right"#}
