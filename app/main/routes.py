@@ -52,7 +52,7 @@ def add_log():
     con.row_factory = sql.Row
     cur = con.cursor()
     cur.execute("INSERT INTO main.calc_log (time,id_calc,status,name,startdate,enddate,calcdate) "
-                "VALUES(null, ?, 0, ?, datetime('now'), null , datetime('now'))", (id_calc, name))
+                "VALUES(null, ?, 0, ?, datetime('now','localtime'), null , datetime('now','localtime'))", (id_calc, name))
     con.commit()
     con.close()
     return redirect(url_for('main.log'))
@@ -68,7 +68,7 @@ def delete_log():
     cur = con.cursor()
     cur.execute(
         "UPDATE main.calc_log SET time = (select strftime('%M','now', 'localtime') - strftime('%M', startdate) "
-        "from main.calc_log where  id =?), status = 2, enddate = datetime('now') where id = ?;", (id, id))
+        "from main.calc_log where  id =?), status = 2, enddate = datetime('now','localtime') where id = ?;", (id, id))
     con.commit()
     con.close()
     return redirect(url_for('main.log'))
