@@ -21,3 +21,4 @@ values (47, 'Затраты на доставку');
 
 insert into calc (id_calc, name)
 values (55, 'Ночной(без лимита на послезавтра)');
+

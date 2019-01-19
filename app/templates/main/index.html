@@ -19,13 +19,14 @@
                 <td>{{ calc["name"] }}</td>
                 <td class="text-right">
                     <div class="row">
-                        <form action="{{ url_for('main.delete') }}" method="post" class="pull-right">
-                            <input type="hidden" name="id" value="{{ calc["id"] }}">
-                            <input type="submit" class="btn btn-danger" data-toggle="confirmation"
-                                   data-title="Действительно остановить?" value="Остановить">
+                        <form action="{{ url_for('main.add_log') }}" method="post" class="pull-right">
+                            <input type="hidden" name="id_calc" value="{{ calc["id_calc"] }}">
+                            <input type="hidden" name="name" value="{{ calc["name"] }}">
+                            <input type="submit" class="btn btn-primary pull-right" data-toggle="confirmation"
+                                   data-title="Действительно запустить?" value="Запустить">
                         </form>
-                        <a class="btn btn-primary pull-right"
-                           href="">Запустить</a>
+{#                        <a class="btn btn-primary pull-right"#}
+{#                           href="">Запустить</a>#}
                     </div>
                 </td>
             </tr>
